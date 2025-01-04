@@ -1,0 +1,23 @@
+.table,
+.table td,
+.table th {
+  font-size: 14pt;
+  border: 1px solid;
+  text-align: center;
+  padding: 4px;
+}
+
+.table th {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #000;
+}
+
+.table tr:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
