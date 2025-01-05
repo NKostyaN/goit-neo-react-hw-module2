@@ -14,12 +14,12 @@ const App = () => {
   };
 
   const [feedback, setFeedback] = useState(generateDefaultState);
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
-  let totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const positiveFeedback =
     totalFeedback === 0
       ? 100
-      : Math.round(((feedback.good + feedback.neutral) / totalFeedback) * 100);
+      : Math.round((feedback.good / totalFeedback) * 100);
 
   useEffect(() => {
     localStorage.setItem("feedback", JSON.stringify(feedback));
@@ -38,8 +38,6 @@ const App = () => {
       ...feedback,
       [feedbackType]: feedback[feedbackType] + 1,
     });
-
-    totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   };
 
   return (
